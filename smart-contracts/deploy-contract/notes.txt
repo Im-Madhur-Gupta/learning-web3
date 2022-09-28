@@ -1,0 +1,5 @@
+- We cant simply import a .sol file in a js file using the require keyword, this is only possible when we are importing js files.
+
+- Instead we will have to read the .sol files from the hdd. We will do this using fs module.
+
+- We can later compile the .sol code to .js code using the solc module.
