@@ -5,7 +5,7 @@ const {interface, bytecode} = require("./compile");
 // creating an instance of the provider
 const provider = new HDWalletProvider(
     "someone twenty damage bubble honey build hood eye digital bomb senior cotton",
-    "https://rinkeby.infura.io/v3/c8b4e766b41a47bc81389ddbb7081304",
+    "https://goerli.infura.io/v3/c8b4e766b41a47bc81389ddbb7081304",
 );
 
 // creating an instance of the web3 lib
