@@ -4,6 +4,7 @@ import web3 from "./web3";
 import lottery from "./lottery";
 
 import EnterLottery from "./components/EnterLottery";
+import PickLotteryWinner from "./components/PickLotteryWinner";
 
 function App() {
   const [manager, setManager] = useState("");
@@ -39,7 +40,12 @@ function App() {
       <p>This lottery contract is managed by {manager}.</p>
       <p>It has got {players.length} players.</p>
       <p>{balance} amount is at stake.</p>
+
+      <hr />
       <EnterLottery lottery={lottery} />
+
+      <hr />
+      <PickLotteryWinner lottery={lottery} />
     </div>
   );
 }
