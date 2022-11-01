@@ -39,7 +39,7 @@ function App() {
       <p>This lottery contract is managed by {manager}.</p>
       <p>It has got {players.length} players.</p>
       <p>{balance} amount is at stake.</p>
-      <EnterLottery />
+      <EnterLottery lottery={lottery} />
     </div>
   );
 }
