@@ -104,4 +104,21 @@ contract Campaign{
         currRequest.recipient.transfer(currRequest.value);
         currRequest.complete = true;
     }
+
+    function getSummary() public view returns(
+        uint, uint, uint, uint, address
+    ){
+        // address(this).balance - The balance available in the smart contract's address ie the campaign.
+        return(
+            minContribution,
+            address(this).balance,
+            requests.length,
+            noOfApprovers,
+            manager
+        );
+    }
+
+    function getRequestsCount() public view returns(uint){
+        return(requests.length);
+    }
 }

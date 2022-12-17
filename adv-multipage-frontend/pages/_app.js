@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Text } from '@chakra-ui/react'
 import useFactoryStore from "../store/useFactoryStore"
 import getFactoryContract from '../utils/getFactoryContract'
 import '../styles/globals.css'
+import Link from 'next/link';
 
 export default function App({ Component, pageProps }) {
   const setFactoryContract = useFactoryStore(state => state.setFactoryContract);
@@ -15,6 +16,9 @@ export default function App({ Component, pageProps }) {
     main();
   }, []);
   return (<ChakraProvider>
-    <Component {...pageProps} />
+    <>
+      <Text padding="20px 50px" backgroundColor="red.100" fontSize="1.5rem" fontWeight="bold"><Link href="/">Campaings</Link></Text>
+      <Component {...pageProps} />
+    </>
   </ChakraProvider>)
 }

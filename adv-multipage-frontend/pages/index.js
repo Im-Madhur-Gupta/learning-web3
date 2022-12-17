@@ -5,7 +5,7 @@ import { Inter } from '@next/font/google'
 import NextLink from 'next/link'
 
 import useFactoryStore from "../store/useFactoryStore"
-import { Flex, Link, Text } from "@chakra-ui/react";
+import { Flex, Heading, Link, Text } from "@chakra-ui/react";
 import CampaignCard from "../components/CampaignCard";
 
 import styles from '../styles/Home.module.css'
@@ -34,11 +34,13 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Flex direction="column">
-          <Text>Open Campaigns</Text>
+          <Heading>Open Campaigns</Heading>
           {campaigns.map(campaignAddress =>
             <CampaignCard key={campaignAddress} address={campaignAddress} />)}
         </Flex>
-        <Link as={NextLink} href="/campaigns/new">Create Campaign</Link>
+        <Text fontSize={20} backgroundColor="red.100" width="fit-content" borderRadius={10} padding="10px 30px" marginTop={20}>
+          <Link as={NextLink} href="/campaigns/new" _hover={{ textDecoration:"none" }}>Create Campaign</Link>
+        </Text>
       </main>
     </>
   )

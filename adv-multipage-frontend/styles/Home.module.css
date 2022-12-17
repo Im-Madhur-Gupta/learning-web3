@@ -1,8 +1,9 @@
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 6rem;
-  min-height: 100vh;
+  padding: 3rem;
+  min-height: 60vh;
 }
 
 .description {

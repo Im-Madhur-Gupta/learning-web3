@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-import { address, abi } from "../constants/contractDetails"
+import { address, abi } from "../constants/factoryContractDetails"
 
 const getFactoryContract = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);

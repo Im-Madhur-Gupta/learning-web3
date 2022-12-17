@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react';
+import { useRouter } from 'next/router'
 import useFactoryStore from '../../store/useFactoryStore';
 import { Button, Flex, Heading, Input, Spinner } from '@chakra-ui/react'
 
 const CreateCampaign = () => {
+    const router = useRouter();
     const factoryContract = useFactoryStore(state => state.factoryContract);
     const minContriInputRef = useRef();
 
@@ -11,7 +13,9 @@ const CreateCampaign = () => {
     const createCampaignHandler = async () => {
         setIsLoading(true);
         try {
-            await factoryContract.createCampaign(+minContriInputRef.current.value);
+            const transaction = await factoryContract.createCampaign(+minContriInputRef.current.value);
+            await transaction.wait();
+            router.push("/");
         }
         catch (err) {
             alert(err.reason);
