@@ -39,7 +39,7 @@ export default function Home() {
             <CampaignCard key={campaignAddress} address={campaignAddress} />)}
         </Flex>
         <Text fontSize={20} backgroundColor="red.100" width="fit-content" borderRadius={10} padding="10px 30px" marginTop={20}>
-          <Link as={NextLink} href="/campaigns/new" _hover={{ textDecoration:"none" }}>Create Campaign</Link>
+          <Link as={NextLink} href="/campaigns/new" _hover={{ textDecoration: "none" }}>Create Campaign</Link>
         </Text>
       </main>
     </>
